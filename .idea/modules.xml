@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mynode_common/mynode_common.iml" filepath="$PROJECT_DIR$/mynode_common/mynode_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mynode_node/mynode_node.iml" filepath="$PROJECT_DIR$/mynode_node/mynode_node.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mynode_parent.iml" filepath="$PROJECT_DIR$/mynode_parent.iml" />
+    </modules>
+  </component>
+</project>

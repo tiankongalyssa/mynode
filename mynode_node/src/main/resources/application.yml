@@ -1,0 +1,13 @@
+server: 
+  port: 9001
+spring: 
+  application:  
+    name: mynode-node #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.75.175.195:3306/mynode?characterEncoding=UTF8&useSSL=false
+    username: root
+    password: root
+  jpa: 
+    database: MySQL
+    show-sql: false
