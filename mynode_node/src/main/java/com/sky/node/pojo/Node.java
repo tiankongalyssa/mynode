@@ -5,10 +5,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
 @Entity(name = "tb_node")
-public class Node extends BaseEntity{
+public class Node extends BaseEntity {
     @Id
-    private Integer id ;
+    private Integer id;
     @JsonIgnore
     private String type;
     private String title;

@@ -1,17 +1,25 @@
 package com.sky.node.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Entity;
 
 @Entity(name = "tb_step")
 public class Step extends BaseEntity{
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
+    @JsonIgnore
     private Integer pid;
+    @JsonIgnore
     private String pname;
     private Integer step;
     private String title;
     private String content;
+    private String description;
 
     @Override
     public String toString() {
@@ -21,7 +29,6 @@ public class Step extends BaseEntity{
                 ", pname='" + pname + '\'' +
                 ", step=" + step +
                 ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
                 ", createTime=" + createTime +
                 ", createUser='" + createUser + '\'' +
                 ", modofiedTime=" + modofiedTime +
@@ -75,5 +82,13 @@ public class Step extends BaseEntity{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

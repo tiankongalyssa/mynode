@@ -1,12 +1,8 @@
 package com.sky.node.dto;
 
-import com.sky.node.pojo.Node;
-
-import java.util.List;
-
-public class NodeResult {
+public class NodeResult<T> {
     private String type;
-    private List<Node> data;
+    private T data;
 
     public NodeResult(String type) {
         this.type = type;
@@ -28,11 +24,11 @@ public class NodeResult {
         this.type = type;
     }
 
-    public List<Node> getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(List<Node> data) {
+    public void setData(T data) {
         this.data = data;
     }
 }

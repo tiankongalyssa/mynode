@@ -1,29 +1,26 @@
 package com.sky.node.pojo;
 
-import javax.persistence.Id;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "tb_springboot")
-public class SpringBoot extends BaseEntity{
+public class SpringBoot extends BaseEntity {
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
-    private String type;
+    private String typeName;
     private String name;
-    private Integer index;
+    private Integer sort;
     private String step;
     private String summary;
-    @Transient
-    private List<Step> steps;
 
     @Override
     public String toString() {
         return "SpringBoot{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", typeName='" + typeName + '\'' +
                 ", name='" + name + '\'' +
-                ", index=" + index +
+                ", sort=" + sort +
                 ", step='" + step + '\'' +
                 ", summary='" + summary + '\'' +
                 ", steps=" + steps +
@@ -42,12 +39,12 @@ public class SpringBoot extends BaseEntity{
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 
     public String getName() {
@@ -58,12 +55,12 @@ public class SpringBoot extends BaseEntity{
         this.name = name;
     }
 
-    public Integer getIndex() {
-        return index;
+    public Integer getSort() {
+        return sort;
     }
 
-    public void setIndex(Integer index) {
-        this.index = index;
+    public void setSort(Integer sort) {
+        this.sort = sort;
     }
 
     public String getStep() {
@@ -89,4 +86,8 @@ public class SpringBoot extends BaseEntity{
     public void setSteps(List<Step> steps) {
         this.steps = steps;
     }
+
+    @Transient
+    private List<Step> steps;
+
 }

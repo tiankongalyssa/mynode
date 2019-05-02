@@ -18,13 +18,14 @@ public class NodeService {
         this.nodeDao = nodeDao;
     }
 
+
     public List<NodeResult> findAll() {
         List<NodeResult> list = new ArrayList<NodeResult>();
-        List<String> type = nodeDao.findDistinct();
-        for (String s : type) {
-            NodeResult nodeResult = new NodeResult(s);
-            nodeResult.setData(nodeDao.findByType(s));
-            list.add(nodeResult);
+        List<String> data = nodeDao.findDistinct();
+        for (String s : data) {
+            NodeResult<List<Node>> nodeNodeResult = new NodeResult<List<Node>>(s);
+            nodeNodeResult.setData(nodeDao.findByType(s));
+            list.add(nodeNodeResult);
         }
         return list;
     }
